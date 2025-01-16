@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import React from 'react'
-import {Events, Home, Login, PassRetrieve, Products, ResetPassword, SignUp, Users,} from './pages'
+import {Events, Home, Login, PassRetrieve, Products, ResetPassword, SignUp, Users, Projects} from './pages'
 
 function App() {
   return (

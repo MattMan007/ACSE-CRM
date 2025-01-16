@@ -16,7 +16,7 @@ function Navbar({ toggleMenu, name, lastname, isAdmin, setIsAdmin }) {
       
 
       {/* Navbar Links */}
-      <ul className='items-center text-lg font-semibold flex w-[300px] justify-between mx-[30px] space-x-[20px]'>
+      <ul className='items-center text-lg font-semibold flex w-[600px] justify-between mx-[30px] space-x-[20px]'>
         <a href="/Products"><li className="cursor-pointer hover:underline text-white hover:text-bluemk2">Products</li></a>
         <a href="/Projects"><li className="cursor-pointer hover:underline text-white hover:text-bluemk2">Projects</li></a>
         <a href="/Events"><li className="cursor-pointer hover:underline text-white hover:text-bluemk2">Events</li></a>

@@ -10,6 +10,7 @@ export default {
         bluemk1: '#bfc8cb',
         bluemk2: '#809197',
         bluemk3: '#415a63',
+        dark: '#1a1a1a',
       }
     },
     screens: {

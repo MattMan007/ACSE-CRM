@@ -19,7 +19,7 @@ function AccountMenu({ toggleMenu, name, lastname, setName, setLastname, setCurr
           </div>
           <span className="text-xl font-semibold">{name} {lastname}</span>
         </div>
-        <button onClick={toggleMenu} className="text-2xl hover:text-gray-300">&times;</button>
+        <button onClick={toggleMenu} className="text-2xl bg-bluemk3">&times;</button>
       </div>
       {/* Acc ount Information */}
       <div className="p-6 space-y-4">
@@ -77,16 +77,16 @@ function AccountMenu({ toggleMenu, name, lastname, setName, setLastname, setCurr
 
         {/* Change Password Button */}
         <div className="text-center">
-          <button onClick={() => setCurrentView('changePass')}  className="bg-[#DBA626] text-offwhite px-6 py-2 rounded-md font-semibold hover:bg-theyellow mr-[20px]">
+          <button onClick={() => setCurrentView('changePass')}  className="bg-bluemk3 text-offwhite px-6 py-2 rounded-md font-semibold hover:bg-white hover:text-thegray mr-[20px]">
             Change Password
           </button>
-          <button onClick={() => setEditMode(!editMode)} className="bg-[#DBA626] text-offwhite px-6 py-2 rounded-md font-semibold hover:bg-[#FFCF33]" >
+          <button onClick={() => setEditMode(!editMode)} className="bg-bluemk3 text-offwhite px-6 py-2 rounded-md font-semibold hover:bg-white hover:text-thegray" >
             {editMode ? "Save Info" : "Edit Info"}
           </button>
         </div>
         <div className='flex justify-center'>
           <a href="/Login">
-            <button className='w-[150px] h-[50px] bg-theblue text-theyellow text-2xl font-semibold rounded-xl'>
+            <button className='bg-thegray text-white hover:bg-white hover:text-thegray text-2xl font-semibold rounded-xl'>
               Log out
             </button>
           </a>
