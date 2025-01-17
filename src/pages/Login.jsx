@@ -57,13 +57,13 @@ function Login() {
                     </div>
 
                     <div className='flex flex-col mt-[40px]'>
-                        <button type='submit' className='self-center bg-bluemk3 text-white text-2xl font-semibold rounded-xl'>
+                        <button type='submit' className='self-center bg-bluemk3  text-2xl font-semibold rounded-xl'>
                                 Log in
                         </button>
                     </div>
                 </form>
                 <a href="/Signup" className='self-center'>    
-                    <button className=' border-[3px] border-bluemk3 text-2xl font-semibold rounded-xl mt-[20px] text-white' onClick="/">
+                    <button className=' border-[3px] border-bluemk3 text-2xl font-semibold rounded-xl mt-[20px]' onClick="/">
                         Sign up
                     </button>
                 </a>

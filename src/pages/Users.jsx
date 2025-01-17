@@ -96,7 +96,7 @@ function Users() {
                 {/* User Campaigns Section */}
                 <div className="md:w-2/3 w-full min-w-[400px]">
                     {/* User Details Section */}
-                    <div className='bg-thelightblue rounded-xl p-6 drop-shadow-xl'>
+                    <div className='rounded-xl p-6 drop-shadow-xl'>
                         {selectedUser ? (
                             <div>
                                 <div className="flex items-center mb-4">
