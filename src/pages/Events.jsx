@@ -5,8 +5,8 @@ import { events } from '../data/events'; // Import your events data
 function Events() {
     const [currentView, setCurrentView] = useState(null);
     const [isBurgOpen, setIsBurgOpen] = useState(false);
-    const [name, setName] = useState("Alexandru");
-    const [lastname, setLastname] = useState("Cristescu");
+    const [name, setName] = useState("John");
+    const [lastname, setLastname] = useState("Doe");
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [isEditing, setIsEditing] = useState(false);

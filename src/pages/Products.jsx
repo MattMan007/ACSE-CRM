@@ -5,8 +5,8 @@ import { products as initialProducts } from '../data/products'; // Import produc
 function Products() {
     const [currentView, setCurrentView] = useState(null);
     const [isBurgOpen, setIsBurgOpen] = useState(false);
-    const [name, setName] = useState("Alexandru");
-    const [lastname, setLastname] = useState("Cristescu");
+    const [name, setName] = useState("John");
+    const [lastname, setLastname] = useState("Doe");
     const [isEditParticipantsOpen, setIsEditParticipantsOpen] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isModifyProductOpen, setIsModifyProductOpen] = useState(false);
