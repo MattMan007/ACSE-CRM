@@ -52,7 +52,7 @@ function Users() {
     const toggleDropdown = () => setDropdownOpen((prev) => !prev);
 
     return (
-        <div className="relative pt-[80px]">
+        <div className="relative pt-[50px]">
             {/* Pass the toggleMenu function and name/lastname to Navbar */}
             <Navbar toggleMenu={toggleMenu} toggleBerg={toggleBurg} name={name} lastname={lastname} />
             {/* Render AccountMenu based on isMenuOpen */}
@@ -63,7 +63,7 @@ function Users() {
             {/* Main Page Content */}
             <div className="md:flex-row flex-col flex gap-8 p-6">
                 {/* User List Section */}
-                <div className="md:w-1/3 w-full min-w-[450px] rounded-xl p-4 max-h-[750px] mb-[30px] flex flex-col drop-shadow-xl">
+                <div className="md:w-1/3 w-full min-w-[550px] rounded-xl p-4 max-h-[800px] mb-[30px] flex flex-col drop-shadow-xl">
                     {/* Filters Section */}
                     <div className="flex justify-between mx-[40px] mb-4">
                         <select name="department" value={filters.department} onChange={handleFilterChange} className="p-2 border rounded-lg bg-offwhite shadow-inner">

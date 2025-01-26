@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Navbar, AccountMenu, ChangePass, EditParticipants } from '../components';
+import React, { useState, useEffect } from 'react';
+import { Navbar, AccountMenu, ChangePass, ModifyProject, AddProject } from '../components';
 import { projects } from '../data/projects'; // Import projects data
 import { users } from '../data/users'; // Import users data
 import { products } from '../data/products'; // Import products data
@@ -7,11 +7,11 @@ import { products } from '../data/products'; // Import products data
 function Projects() {
     const [currentView, setCurrentView] = useState(null);
     const [isBurgOpen, setIsBurgOpen] = useState(false);
-    const [name, setName] = useState("Alexandru");
-    const [lastname, setLastname] = useState("Cristescu");
-    const [isEditParticipantsOpen, setIsEditParticipantsOpen] = useState(false); // State for EditParticipants visibility
+    const [name, setName] = useState("John");
+    const [lastname, setLastname] = useState("Doe");
     const [selectedProject, setSelectedProject] = useState(null); // Track selected project
     const [isModifyProjectOpen, setIsModifyProjectOpen] = useState(false); // State to control ModifyProject modal visibility
+    const [isAddProjectOpen, setIsAddProjectOpen] = useState(false); // State for AddProject modal
 
     // Function to toggle the Account Menu visibility
     const toggleMenu = () => {
@@ -64,6 +64,23 @@ function Projects() {
         return products.filter((product) => productIds.includes(product.id));
     };
 
+    const handleAddProject = (newProject) => {
+        // Save the new project (this would typically involve an API call)
+        projects.push(newProject); // This assumes `projects` is a local array
+        setIsAddProjectOpen(false); // Close the AddProject modal
+    };
+
+    useEffect(() => {
+            if (currentView === 'changePass' || isModifyProjectOpen || isAddProjectOpen) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+            return () => {
+                document.body.style.overflow = '';
+            };
+        }, [currentView, isModifyProjectOpen, isAddProjectOpen]);
+
     return (
         <div className="relative min-h-screen">
             {/* Pass the toggleMenu function and name/lastname to Navbar */}
@@ -85,6 +102,7 @@ function Projects() {
                             {/* Add Project Button */}
                             <button
                                 className="bg-green-700 text-white px-6 py-2 rounded-md hover:bg-green-600 transition-all duration-300"
+                                onClick={() => setIsAddProjectOpen(true)}
                             >
                                 Add Project
                             </button>
@@ -142,10 +160,17 @@ function Projects() {
 
             {/* ModifyProject modal */}
             {isModifyProjectOpen && selectedProject && (
-                <ModifyProduct
+                <ModifyProject
                     onBack={closeModifyProject}
                     project={selectedProject}
                     onSave={handleSaveModifiedProject}
+                />
+            )}
+            {/* AddProject modal */}
+            {isAddProjectOpen && (
+                <AddProject
+                    onBack={() => setIsAddProjectOpen(false)}
+                    onSave={handleAddProject}
                 />
             )}
         </div>

@@ -66,8 +66,8 @@ function EditParticipants({ onBack, event, setEvent }) {
                                 type="button"
                                 className={`px-3 py-1 rounded-full ${
                                     selectedParticipants.includes(user)
-                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                                        : 'bg-offwhite text-gray-700 hover:bg-gray-200'
+                                        ? 'bg-bluemk1 text-bluemk3 cursor-not-allowed'
+                                        : 'bg-bluemk3 text-bluemk1 hover:bg-gray-200'
                                 }`}
                                 disabled={selectedParticipants.includes(user)}
                                 onClick={() => handleAddParticipant(user)}

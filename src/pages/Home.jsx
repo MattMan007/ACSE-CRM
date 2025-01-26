@@ -4,8 +4,8 @@ import { Navbar, AccountMenu, ChangePass } from '../components';
 function Home() {
     const [currentView, setCurrentView] = useState(null);
     const [isBurgOpen, setIsBurgOpen] = useState(false);
-    const [name, setName] = useState("Alexandru");
-    const [lastname, setLastname] = useState("Cristescu");
+    const [name, setName] = useState("John");
+    const [lastname, setLastname] = useState("Doe");
     const [isAdmin, setIsAdmin] = useState(false);
 
 

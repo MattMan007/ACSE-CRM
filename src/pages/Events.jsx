@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, AccountMenu, ChangePass, EditParticipants } from '../components';
 import { events } from '../data/events'; // Import your events data
 
@@ -55,6 +55,17 @@ function Events() {
     const closeEditParticipants = () => {
         setIsEditParticipantsOpen(false);
     };
+
+    useEffect(() => {
+        if (currentView === 'changePass' || isEditParticipantsOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [currentView, isEditParticipantsOpen]);
 
     return (
         <div className="relative pt-[80px]">

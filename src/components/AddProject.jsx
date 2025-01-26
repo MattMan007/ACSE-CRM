@@ -1,33 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { users } from '../data/users'; // Import users data
 import { products } from '../data/products'; // Import products data
 
-function ModifyProject({ onBack, project, onSave }) {
-    const [name, setName] = useState(project.name);
-    const [description, setDescription] = useState(project.description);
-    const [client, setClient] = useState(project.client);
-    const [selectedUsers, setSelectedUsers] = useState(project.users || []);
-    const [selectedProducts, setSelectedProducts] = useState(project.products || []);
-
-    // Update form fields when the project changes
-    useEffect(() => {
-        setName(project.name);
-        setDescription(project.description);
-        setClient(project.client);
-        setSelectedUsers(project.users || []);
-        setSelectedProducts(project.products || []);
-    }, [project]);
+function AddProject({ onBack, onSave }) {
+    const [name, setName] = useState('');
+    const [description, setDescription] = useState('');
+    const [client, setClient] = useState('');
+    const [selectedUsers, setSelectedUsers] = useState([]);
+    const [selectedProducts, setSelectedProducts] = useState([]);
 
     const handleSave = () => {
-        const updatedProject = {
-            ...project,
+        if (!name || !description || !client) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        const newProject = {
+            id: Date.now(), // Generate a unique ID
             name,
             description,
             client,
             users: selectedUsers,
             products: selectedProducts,
         };
-        onSave(updatedProject); // Pass the updated project to the parent
+
+        onSave(newProject); // Pass the new project to the parent
         onBack(); // Close the modal
     };
 
@@ -50,7 +47,7 @@ function ModifyProject({ onBack, project, onSave }) {
     return (
         <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
             <div className="w-[700px] h-[600px] bg-thegray rounded-xl border-2 border-bluemk3 drop-shadow-xl p-6 overflow-y-auto">
-                <h2 className="text-2xl font-semibold mb-4">Modify Project</h2>
+                <h2 className="text-2xl font-semibold mb-4">Add New Project</h2>
 
                 {/* Project Name */}
                 <div className="mb-4">
@@ -139,7 +136,7 @@ function ModifyProject({ onBack, project, onSave }) {
                     </button>
                     <button
                         onClick={onBack}
-                        className="w-[100px] h-[40px] bg-gray-500 text-white rounded-xl"
+                        className="w-[100px] h-[40px] bg-gray-500 text-white rounded-xl hover:bg-gray-400"
                     >
                         Cancel
                     </button>
@@ -149,4 +146,4 @@ function ModifyProject({ onBack, project, onSave }) {
     );
 }
 
-export default ModifyProject;
+export default AddProject;
